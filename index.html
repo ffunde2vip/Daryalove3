@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Для Дарьи — потому что ты лучшая</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Marck+Script&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <canvas id="petals" aria-hidden="true"></canvas>
+
+    <div id="gate" class="gate">
+      <div class="gate__glow"></div>
+      <p class="gate__kicker">для самых дорогих глаз</p>
+      <h1 class="gate__name" id="gateName">Дарья</h1>
+      <p class="gate__ask">Можно войти в сердце, которое бьётся только для тебя?</p>
+      <button class="gate__btn" id="enterBtn" type="button">
+        <span>Открой</span>
+      </button>
+      <p class="gate__hint">внутри ждёт музыка и признание</p>
+    </div>
+
+    <header class="player" id="player">
+      <button class="player__toggle" id="musicToggle" type="button" aria-label="Музыка">
+        ♪
+      </button>
+      <div class="player__meta">
+        <strong id="musicTitle">Мелодия для тебя</strong>
+        <span id="musicState">романтическая тема</span>
+      </div>
+      <input
+        id="volume"
+        class="player__vol"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.55"
+        aria-label="Громкость"
+      />
+    </header>
+
+    <main id="story" class="story" hidden>
+      <section class="hero">
+        <p class="eyebrow">посвящается</p>
+        <h1 class="hero__name" id="heroName">Дарья</h1>
+        <p class="hero__line" id="heroLine">ты — лучшая на свете</p>
+        <p class="hero__sub" id="heroSub"></p>
+        <button class="hero__portrait" id="heroPortraitBtn" type="button" aria-label="Открыть фото">
+          <img id="heroPortrait" alt="Дарья" />
+        </button>
+        <div class="hero__heart" aria-hidden="true">♥</div>
+      </section>
+
+      <section class="letter">
+        <h2 id="letterTitle"></h2>
+        <div class="letter__paper" id="letterBody"></div>
+      </section>
+
+      <section class="reasons">
+        <h2 id="reasonsTitle"></h2>
+        <div class="reasons__grid" id="reasonsGrid"></div>
+      </section>
+
+      <section class="stars">
+        <h2 id="starsTitle"></h2>
+        <p class="gallery__hint">нажми на слово — оно загорится для тебя</p>
+        <div class="stars__sky" id="starsSky"></div>
+      </section>
+
+      <section class="mirror" id="mirror">
+        <p class="eyebrow">сказка</p>
+        <h2 id="mirrorTitle"></h2>
+        <p class="mirror__spell" id="mirrorSpell"></p>
+        <div class="mirror__frame">
+          <div class="mirror__glass" id="mirrorGlass">
+            <img id="mirrorPortrait" alt="Дарья" />
+            <div class="mirror__fog" aria-hidden="true"></div>
+            <p class="mirror__whisper" id="mirrorWhisper">спроси меня</p>
+          </div>
+        </div>
+        <div class="mirror__qs" id="mirrorQs"></div>
+        <div class="mirror__choices" id="mirrorChoices" hidden></div>
+        <p class="mirror__verdict" id="mirrorVerdict"></p>
+        <p class="mirror__crown" id="mirrorCrown" hidden></p>
+      </section>
+
+      <section class="gallery">
+        <h2 id="galleryTitle"></h2>
+        <p class="gallery__hint" id="galleryHint"></p>
+        <div class="gallery__grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="vows">
+        <h2 id="vowsTitle"></h2>
+        <ul class="vows__list" id="vowsList"></ul>
+      </section>
+
+      <section class="finale">
+        <p class="eyebrow">навсегда</p>
+        <h2 id="finaleTitle"></h2>
+        <p class="finale__line" id="finaleLine"></p>
+        <p class="finale__sub" id="finaleSub"></p>
+        <p class="finale__pulse">ты лучшая</p>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" hidden>
+      <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Закрыть">×</button>
+      <img id="lightboxImg" alt="" />
+      <p id="lightboxCap"></p>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="music.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
